@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center " style="margin-top: 10%;">
+    <form class="col-3">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="loginVm.username" >
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="loginVm.password">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" name="rememberMe" [(ngModel)]="loginVm.rememberMe">
+          <label class="form-check-label" for="rememberMe">Remeber me</label>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" [disabled]="!loginVm.password || !loginVm.username"  (click)="login()" >Login</button>
+
+        </div>
+        <div class="d-flex justify-content-center">
+            <span class="mt-2" style="cursor: pointer;"  routerLink="sign-on" >Create an account</span>
+        </div>
+      </form>
+</div>
